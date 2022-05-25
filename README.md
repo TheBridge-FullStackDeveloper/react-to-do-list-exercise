@@ -42,6 +42,8 @@ Dibujar en el DOM la lista de tareas.
   _id: 1,
 }
 ```
+- Implementa la funcionalidad para remover el elemento de la lista
+
 - Implementa las dos opciones para añadir los elementos, con la tecla `Enter` y con el click de un botón
 
 - Divide el código en componentes
