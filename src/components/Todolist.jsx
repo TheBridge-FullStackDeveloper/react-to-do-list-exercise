@@ -5,8 +5,8 @@ function Todolist () {
     return (
         <>
         <p>Name:{nombre}</p>
-        <input type="text" onChange={()=>{
-            setName("Georgio");
+        <input type="text" onChange={(e)=>{
+            setName(e.target.value);
         }}/>
         </>
     )
