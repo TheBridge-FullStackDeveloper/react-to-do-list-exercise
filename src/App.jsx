@@ -8,16 +8,19 @@ function App() {
 
   // onKeyDown
   const onKeyDown = (event) => {
+    // Verificar si se presionó Enter y la tarea no está vacía
     if (event.key === 'Enter' && task.trim() !== '') {
       addTask();
     }
   };
-  
+
   // onClick Add Task
   const onClick = () => {
-        addTask();
-      };
-
+    // Verificar si la tarea no está vacía
+    if (task.trim() !== '') {
+      addTask();
+    }
+  };
 
   // Agregar nueva tarea
   const addTask = () => {
@@ -30,7 +33,7 @@ function App() {
     setTask('');
   };
 
-  // Alternar Tarea
+  // Alternar estado de tarea
   const toggleTask = (taskId) => {
     setTaskList((prevTaskList) =>
       prevTaskList.map((task) => {
@@ -42,7 +45,7 @@ function App() {
     );
   };
 
-  // Eliminar Tarea
+  // Eliminar tarea
   const deleteTask = (taskId) => {
     setTaskList((prevTaskList) =>
       prevTaskList.filter((task) => task._id !== taskId)
@@ -66,9 +69,13 @@ function App() {
             key={task._id}
             className={task.isDone ? 'completed' : ''}
             onClick={() => toggleTask(task._id)}
+            style={{ textDecoration: task.isDone ? 'line-through' : 'none' }}
           >
-            {task.description}
-            <button onClick={() => deleteTask(task._id)}>Delete</button>
+            <span className="icon">{task.isDone ? '⚫' : '⚪'}</span>
+            <span>{task.description}</span>
+            <button className="delete-btn" onClick={() => deleteTask(task._id)}>
+              x
+            </button>
           </li>
         ))}
       </ul>
