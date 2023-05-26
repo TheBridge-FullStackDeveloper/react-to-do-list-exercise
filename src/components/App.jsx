@@ -1,41 +1,75 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  // useState para las tareas actuales
   const [task, setTask] = useState('');
   const [taskList, setTaskList] = useState([]);
 
-  const handleKeyDown = (event) => {
+  // onKeyDown
+  const onKeyDown = (event) => {
     if (event.key === 'Enter' && task.trim() !== '') {
       addTask();
     }
   };
+  
+  // onClick Add Task
+  const onClick = () => {
+        addTask();
+      };
 
-  const handleClick = () => {
-    if (task.trim() !== '') {
-      addTask();
-    }
+
+  // Agregar nueva tarea
+  const addTask = () => {
+    const newTask = {
+      description: task,
+      isDone: false,
+      _id: Date.now(),
+    };
+    setTaskList((prevTaskList) => [...prevTaskList, newTask]);
+    setTask('');
   };
 
-  const addTask = () => {
-    setTaskList((prevTaskList) => [...prevTaskList, task]);
-    setTask('');
+  // Alternar Tarea
+  const toggleTask = (taskId) => {
+    setTaskList((prevTaskList) =>
+      prevTaskList.map((task) => {
+        if (task._id === taskId) {
+          return { ...task, isDone: !task.isDone };
+        }
+        return task;
+      })
+    );
+  };
+
+  // Eliminar Tarea
+  const deleteTask = (taskId) => {
+    setTaskList((prevTaskList) =>
+      prevTaskList.filter((task) => task._id !== taskId)
+    );
   };
 
   return (
     <div className="App">
-      <h1>React to do list</h1>
+      <h1>React To-Do List</h1>
       <input
         type="text"
         value={task}
         onChange={(event) => setTask(event.target.value)}
-        onKeyDown={handleKeyDown}
+        onKeyDown={onKeyDown}
+        placeholder="Enter a task..."
       />
-      <button onClick={handleClick}>Add Task</button>
+      <button onClick={onClick}>Add Task</button>
       <ul>
-        {taskList.map((taskItem, index) => (
-          <li key={index}>{taskItem}</li>
+        {taskList.map((task) => (
+          <li
+            key={task._id}
+            className={task.isDone ? 'completed' : ''}
+            onClick={() => toggleTask(task._id)}
+          >
+            {task.description}
+            <button onClick={() => deleteTask(task._id)}>Delete</button>
+          </li>
         ))}
       </ul>
     </div>
