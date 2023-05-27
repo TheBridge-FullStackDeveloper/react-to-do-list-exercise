@@ -1,6 +1,7 @@
 body{
 
-    background-color : #3B6064;
+    background-color : #B1D4E0;
+    color            : #0C2D48;
     display          : flex;
     justify-content  : center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -19,6 +20,10 @@ body{
     padding-right    : 60px;
 }
 
+.title-color{
+    color: #0C2D48;
+}
+
 .align-left{
     text-align   : left;
 }
@@ -29,6 +34,7 @@ body{
 
 .input-text{
     border-radius : 8px;
+    text-align    : center;
 }
 
 .form-contain{
@@ -64,7 +70,8 @@ body{
     border-radius    : 8px;
     width            : 100px;
     height           : 25px;
-    background-color : #C9E4CA;
+    background-color : #2E8BC0;
+    color            : white;
     margin-top       : 12px;
     margin-left: 35px;
 }
