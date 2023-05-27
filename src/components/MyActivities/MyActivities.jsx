@@ -1,35 +1,67 @@
-import "./MyActivities.css"
 import { useState } from 'react';
+import "./MyActivities.css"
 
 function MyActivities() {
-    const [ item, setItem ] = useState('');
-    const [ todoList, setTodoList ] = useState([]);
+    const [item, setItem] = useState(''); 
+    const [todoList, setTodoList] = useState([]); 
+    
+    // Función para el cambio el input para mostrar mientras edito
+    const handleItemChange = (e) => {
+      setItem(e.target.value)
+    }
+
+    // Función que me permite eliminar un item
+    const handleDeleteTodo = (index) => {
+      const newTodos = [...todoList];
+      newTodos.splice(index, 1);
+      setTodoList(newTodos);
+    };
   
     return(<>
-      <p>Actividad - Item: <strong><i>{item}</i></strong></p>
-  
-      <input 
-        type="text"
-        onChange = {(e) => { setItem( e.target.value ) }} 
+      <section className="main-container">
+
+        <p className="margin-text">Actividad - Item: <strong><i>{item}</i></strong></p>
+        
+        {/* Para meter los datos */}
+        <input 
+          type="text"
+          onChange={handleItemChange} 
+          className="margin-text input-text"
+          placeholder="¿Qué harás?"
         />
-  
-        <ul>
+
+        <ul className="align-left">
+
           <h2>Lista de tareas:</h2> { ' ' }
-          { todoList.map(( item ) => ( <li> {item} </li> ))}
+          {todoList.map((item, index) => ( 
+
+            <div className='form-contain'>
+
+              <section className="item-flex " key={index}>
+                <label htmlFor={item}>{item}</label>
+                <section className="check-add-rmv">
+
+                  <input type="radio" name="task_todo" value="task" />
+                  <button className="btn-delete"
+                    onClick={() => handleDeleteTodo(index)}
+                  >X</button>
+
+                </section>
+              </section>
+
+            </div>
+
+          ))}
+
         </ul>
-  
-      <br />
-  
-      <button
-        onClick={() => {
-          setTodoList( [...todoList, item] )
-        }}
-      >
-  
-      Añadir task
-      
-      </button>
-    
+
+        <br />
+
+        <button onClick={() => { setTodoList([...todoList, item]) }} className="btn-addTask">
+          Añadir tarea
+        </button>
+
+      </section>
     </>
     )
   }

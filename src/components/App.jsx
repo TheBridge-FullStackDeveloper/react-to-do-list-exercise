@@ -5,8 +5,8 @@ function App() {
 
   return (
     <>
-      <div className="App">
-        <h1>React To-Do List:</h1>
+      <div className="App centering">
+        <h1><i>Lista de tareas - Con React:</i></h1>
       </div>
 
       <MyActivities />
