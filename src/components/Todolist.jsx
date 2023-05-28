@@ -9,7 +9,7 @@ function Todolist () {
         <input 
         type="text"
         value = "Task"
-        onChange={(e)=>{
+        onChange={(e)=>{}
             setTask(e.target.value);
         }}
 
