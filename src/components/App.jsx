@@ -2,6 +2,7 @@ import { useState } from 'react'
 import InputListEnter from './InputListEnter'
 import InputListClick from './InputListClick'
 
+
 function App() {
   const [list, setList] = useState([]);
 
@@ -24,6 +25,4 @@ function App() {
 
 }
 
-
-//      <InputListClick onAdd= {handleAddToList} />
 export default App

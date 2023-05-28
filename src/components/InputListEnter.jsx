@@ -19,18 +19,11 @@ function InputListEnter({ onAdd }) {
         <input type="text" value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyDown}/>
       </div>
     );
+
   }
 
   export default InputListEnter
-
-  /*        <ul>
-            Tareas: {" "}
-            {inputValue.map((Tarea)=> (
-                <li>{Tarea}</li>
-            ))}
-        </ul>
-        */
-
+  
 //inputValue es el valor actual
 // setInputValue es el valor actualizado
 //handleInputValue es digamos quien actualiza el inputValue  utilizando el setInputValue

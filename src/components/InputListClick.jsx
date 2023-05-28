@@ -3,7 +3,7 @@ import React from "react"
 function InputListClick({ onAdd }) {
     const [inputValue, setInputValue] = React.useState('');
   
-    const handleInputChange = () => {
+    const handleInputChange = (event) => {
       setInputValue(event.target.value);
     };
 
@@ -22,11 +22,6 @@ function InputListClick({ onAdd }) {
 
   export default InputListClick
 
-  /*        <ul>
-            Tareas: {" "}
-            {inputValue.map((Tarea)=> (
-                <li>{Tarea}</li>
-            ))}
-        </ul>
-        */
-
+//inputValue es el valor actual
+// setInputValue es el valor actualizado
+//handleInputChange es digamos quien actualiza el inputValue  utilizando el setInputValue
