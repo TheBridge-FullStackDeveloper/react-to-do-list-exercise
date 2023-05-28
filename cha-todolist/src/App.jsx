@@ -1,30 +1,29 @@
-
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-import TaskList from './components/TaskList';
+import React, { useState } from "react";
+import TaskList from "./components/TaskList";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState('');
+  const [newTask, setNewTask] = useState("");
 
   const handleInputChange = (event) => {
     setNewTask(event.target.value);
   };
 
   const handleAddTask = () => {
-    if (newTask.trim() !== '') {
+    if (newTask.trim() !== "") {
       const newTaskObj = {
         name: newTask,
         checked: false,
       };
 
       setTasks([...tasks, newTaskObj]);
-      setNewTask('');
+      setNewTask("");
     }
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       handleAddTask();
     }
   };
@@ -51,12 +50,16 @@ const App = () => {
         onKeyDown={handleKeyDown}
         placeholder="Add a task..."
       />
-      <button className='button' onClick={handleAddTask}>
+      <button className="button" onClick={handleAddTask}>
         Add a Task
-        </button>
-      
-      <TaskList tasks={tasks} setTasks={setTasks} handleItemClick={handleItemClick} handleItemClose={handleItemClose} />
+      </button>
 
+      <TaskList
+        tasks={tasks}
+        setTasks={setTasks}
+        handleItemClick={handleItemClick}
+        handleItemClose={handleItemClose}
+      />
     </div>
   );
 };
