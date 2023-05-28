@@ -4,8 +4,8 @@ function Todolist() {
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
   const handleKeyPress = (e) => {
-    // console.log(e);
-    if (e.key === "Enter") {
+    console.log(e);
+    if (e.key === "Enter" && e.target.value!== "") {
       addTaskToList();
     }
   };
@@ -24,9 +24,15 @@ function Todolist() {
   
   return (
     <>
+
+    <div className="todo">
       {/* <p>Task name :{task}</p> */}
+      <div className="NewList">
+      <label className = "LabelList">Add new Task</label>
       <input
         type="text"
+        className="task-input"
+        value={task}
         onChange={(e) => {
           setTask(e.target.value);
         }}
@@ -37,15 +43,19 @@ function Todolist() {
           setTaskList([...taskList, task]);
         }}
       >
-        Add task to the list{" "}
+        Add task to the list
+    
       </button>
-
-      <ul>
-        Tasks to do:{" "}
+      </div> 
+      
+      <div className="list">
+      <ul className="task-list">
+        {/* Tasks to do:{" "} */}
         {taskList.map((task,index) => (
-          <li>{task} <button onClick={() => removeTask(index)}>Remove</button></li>
+          <li>{task} <button onClick={() => removeTask(index)}>&#10007;</button></li>
         ))}
       </ul>
+      </div>
       {/* <ul>
         {taskList.map((task, index) => (
           <li key={index}>
@@ -54,6 +64,7 @@ function Todolist() {
           </li>
         ))}
       </ul> */}
+       </div>
     </>
   );
 }

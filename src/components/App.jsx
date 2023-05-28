@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import Todolist from './Todolist'
+import styleTodolist from './styleTodolist.css'
 
 function App() {
   return (
