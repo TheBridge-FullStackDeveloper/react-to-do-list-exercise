@@ -1,28 +1,31 @@
 import { useState } from "react";
 
 function Todolist () {
-    const [name, setName]=useState("");
-    const [studentList, setStudentList]= useState([]);
+    const [task, setTask]=useState("");
+    const [taskList, setTaskList]= useState([]);
     return (
     <>
-        <p>Name:{name}</p>
-        <ul>
-            Alumnos: {studentList.map(student => <li>{student}</li> )}
-        </ul>
+        {/* <p>Task name :{task}</p> */}
         <input 
         type="text"
+        value = "Task"
         onChange={(e)=>{
-            setName(e.target.value);
+            setTask(e.target.value);
         }}
 
     />
         <button 
         onClick={() => {
-            setStudentList([...studentList,name]);
+            setTaskList([...taskList,task]);
         }}
         >
-            Add student to the list </button>
+            Add task to the list </button>
+            
+        <ul>
+            Tasks to do: {taskList.map(task => <li>{task}</li> )}
+        </ul>
         </>
+        
     )
     ;
 };
