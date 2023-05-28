@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// eslint-disable-next-line no-unused-vars
+import React, { useState } from 'react';
+import TaskList from './components/TaskList';
+
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
+
+  const handleInputChange = (event) => {
+    setNewTask(event.target.value);
+  };
+
+  const handleAddTask = () => {
+    if (newTask.trim() !== '') {
+      const newTaskObj = {
+        name: newTask,
+        checked: false,
+      };
+
+      setTasks([...tasks, newTaskObj]);
+      setNewTask('');
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleAddTask();
+    }
+  };
+
+  const handleItemClick = (index) => {
+    const updatedTasks = [...tasks];
+    updatedTasks[index].checked = !updatedTasks[index].checked;
+    setTasks(updatedTasks);
+  };
+
+  const handleItemClose = (index) => {
+    const updatedTasks = [...tasks];
+    updatedTasks.splice(index, 1);
+    setTasks(updatedTasks);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div>
+      <h1>To do List</h1>
+      <input
+        type="text"
+        value={newTask}
+        onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
+        placeholder="Add a task..."
+      />
+      <button className='button' onClick={handleAddTask}>
+        Add a Task
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      
+      <TaskList tasks={tasks} setTasks={setTasks} handleItemClick={handleItemClick} handleItemClose={handleItemClose} />
 
-export default App
+    </div>
+  );
+};
+
+export default App;
