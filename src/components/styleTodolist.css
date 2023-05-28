@@ -1,5 +1,11 @@
-.todo {
+
+
+
+.container {
     width: 25%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 
 }
 .list{

@@ -4,8 +4,7 @@ function Todolist() {
   const [task, setTask] = useState("");
   const [taskList, setTaskList] = useState([]);
   const handleKeyPress = (e) => {
-    console.log(e);
-    if (e.key === "Enter" && e.target.value!== "") {
+    if (e.key === "Enter" && e.target.value !== "") {
       addTaskToList();
     }
   };
@@ -14,49 +13,50 @@ function Todolist() {
       setTaskList([...taskList, task]);
       setTask("");
     }
-    
   };
   const removeTask = (index) => {
     const updatedTaskList = [...taskList];
     updatedTaskList.splice(index, 1);
     setTaskList(updatedTaskList);
   };
-  
+
   return (
     <>
+      <div className="container">
+        <div className="todo">
+          {/* <p>Task name :{task}</p> */}
+          <div className="NewList">
+            <label className="LabelList">Add new Task</label>
+            <input
+              type="text"
+              className="task-input"
+              value={task}
+              onChange={(e) => {
+                setTask(e.target.value);
+              }}
+              onKeyPress={handleKeyPress}
+            />
+            <button
+              onClick={() => {
+                setTaskList([...taskList, task]);
+              }}
+            >
+              Add task to the list
+            </button>
+          </div>
 
-    <div className="todo">
-      {/* <p>Task name :{task}</p> */}
-      <div className="NewList">
-      <label className = "LabelList">Add new Task</label>
-      <input
-        type="text"
-        className="task-input"
-        value={task}
-        onChange={(e) => {
-          setTask(e.target.value);
-        }}
-        onKeyPress={handleKeyPress}
-      />
-      <button
-        onClick={() => {
-          setTaskList([...taskList, task]);
-        }}
-      >
-        Add task to the list
-    
-      </button>
-      </div> 
-      
-      <div className="list">
-      <ul className="task-list">
-        {/* Tasks to do:{" "} */}
-        {taskList.map((task,index) => (
-          <li>{task} <button onClick={() => removeTask(index)}>&#10007;</button></li>
-        ))}
-      </ul>
-      </div>
-      {/* <ul>
+          <div className="list">
+            <ul className="task-list">
+              {/* Tasks to do:{" "} */}
+              {taskList.map((task, index) => (
+                <li>
+                  {task}{" "}
+                  <button onClick={() => removeTask(index)}>&#10007;</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* <ul>
         {taskList.map((task, index) => (
           <li key={index}>
             {task}
@@ -64,7 +64,8 @@ function Todolist() {
           </li>
         ))}
       </ul> */}
-       </div>
+        </div>
+      </div>
     </>
   );
 }
