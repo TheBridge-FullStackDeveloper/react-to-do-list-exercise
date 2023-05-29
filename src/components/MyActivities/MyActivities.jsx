@@ -2,6 +2,7 @@ import { useState } from 'react';
 import "./MyActivities.css"
 
 function MyActivities() {
+
     const [ item, setItem ] = useState('');
     const [ todoList, setTodoList ] = useState([]);
 
@@ -13,7 +14,7 @@ function MyActivities() {
     // Función para agregar un item en el Array
     const handleAddItem = () => {
       if( item.trim() != "" ){
-        setTodoList( [ ...todoList, item ]);
+        setTodoList( [ ...todoList, item ] );
         // setItem('');
       }
     };
@@ -25,8 +26,6 @@ function MyActivities() {
         handleAddItem();
       }
     }
-
-
 
     //Función que tacha la actividad una vez es seleccionada como realizada
     const manageMarkDone = ( index ) => {
