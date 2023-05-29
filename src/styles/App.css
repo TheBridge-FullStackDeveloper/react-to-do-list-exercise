@@ -1,42 +1,77 @@
 .App {
   text-align: center;
+  
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.h1 {
+  font-size: 5rem;
+  color: rgba(28, 30, 32, 0.905);
+  display: flex;
+  display: inline;
+  border: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-shadow: 4px 4px 5px #0005;
+
+}
+.input_task{
+  margin: 15px 15px;
+  margin-top: 20px;
+  width: 15rem;
+  text-align: center;
+  color: white;
+  background-color: rgb(20, 20, 29);
+  
+
+}
+.button_task{
+  background-color: white;
+  color: rgba(28, 30, 32, 0.905);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.div_ul {
+  margin-left: 30%;
+  border: 5px  solid rgba(0, 0, 0, 0.542);
+  border-radius: 5px;
+  margin-right: 30%;
+  background-color: antiquewhite;
+  box-shadow: 5px 5px 10px;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ul{
+  list-style-type: none;
+  background-color:antiquewhite;
+  margin-left: 30%;
+  margin-right: 30%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 2px solid black;
+  box-shadow: 5px 5px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.task-done {
+  text-decoration: line-through;
+  color: red;
+  background-color: rgb(20, 20, 29);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.round-button {
+  width: 20px;
+  height: 20px;
+  
+  
+}
+.round-button:focus,
+.round-button:active {
+  background-color:blue;
+}
+.button_click{
+  background-color: white;
+  margin-bottom: 5px;
+  margin-right: 50%;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
-}
