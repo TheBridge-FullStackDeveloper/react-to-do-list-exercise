@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import "../App.css";
+import MyActivities from "./MyActivities/MyActivities";
 
 function App() {
+
   return (
-    <div className="App">
-      <h1>React to do list</h1>
-    </div>
+    <>
+      <div className="App centering">
+        <h1><i>Lista de tareas - Con React:</i></h1>
+      </div>
+
+      <MyActivities />
+    </>
   )
 }
 

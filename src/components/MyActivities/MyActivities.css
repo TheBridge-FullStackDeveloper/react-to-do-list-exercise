@@ -1,0 +1,77 @@
+body{
+
+    background-color : #B1D4E0;
+    color            : #0C2D48;
+    display          : flex;
+    justify-content  : center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.main-container{
+    width            : 450px;
+    height           : auto;
+    background-color : white;
+    border-radius    : 8px;
+    box-shadow       : 1px 1px 15px;
+    text-align       : center;
+    padding          : 20px;
+    margin-top       : 40px;
+    padding-right    : 60px;
+}
+
+.title-color{
+    color: #0C2D48;
+}
+
+.align-left{
+    text-align   : left;
+}
+
+.margin-text{
+    margin-left  : 45px;
+}
+
+.input-text{
+    border-radius : 8px;
+    text-align    : center;
+}
+
+.form-contain{
+    /* border: 1px solid red; */
+    width         : auto;
+    height        : 25px;
+    box-shadow    : 1px 1px 5px;
+    border-radius : 8px;
+    margin        : 10px;
+    padding       : 5px;
+    
+}
+
+.item-flex{
+    display         : flex;
+    justify-content : space-between;
+    margin-left     : 10px;
+    padding-top     : 3px;
+}
+
+.check-add-rmv{
+    line-height: 11px;
+}
+
+.btn-delete{
+    background-color: white;
+    border: none;
+    
+}
+
+
+.btn-addTask{
+    border-radius    : 8px;
+    width            : 100px;
+    height           : 25px;
+    background-color : #2E8BC0;
+    color            : white;
+    margin-top       : 12px;
+    margin-left: 35px;
+}
