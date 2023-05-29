@@ -36,12 +36,11 @@ Dibujar en el DOM la lista de tareas.
 💡 Pista: Para esta iteración el estado debería ser un array de objectos, podría ser algo así:
 
 ```js
-{
+/*{
   description: 'Tarea',
   isDone: false,
   _id: 1,
-}
-```
+}*/``
 - Implementa la funcionalidad para remover el elemento de la lista
 
 - Implementa las dos opciones para añadir los elementos, con la tecla `Enter` y con el click de un botón
