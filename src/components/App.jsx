@@ -73,7 +73,7 @@ function App() {
               onClick={() => handleDeleteTask(task._id)}
               className="delete-button"
             >
-              X
+              x
             </button>
             <button
               onClick={() => handleToggleTask(task._id)}
