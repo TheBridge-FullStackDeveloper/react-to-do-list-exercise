@@ -1,0 +1,105 @@
+
+
+
+.container {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+.list{
+    
+    color:white;
+    font-size: larger;
+    font-family: "Quicksand", sans-serif;
+    /* height: 3rem; */
+}
+.LabelList{
+    color:#ff6666;
+    font-size: larger;
+    font-family: "Quicksand", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+
+}
+.task-input {
+    margin-bottom: 10px;
+  }
+  
+  .task-list {
+    list-style: none;
+    padding: 0;
+    
+  }
+  
+  .task-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background:#ff6666;
+    color:white;
+    font-size: larger;
+    font-family: "Quicksand", sans-serif;
+    height: 3rem;
+    padding-left: 5%
+  }
+  
+  .task-list li button {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: larger;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .task-list-container {
+    margin-top: 20px;
+  }
+
+  .NewList {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .NewList label {
+    min-width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .NewList input {
+    flex-grow: 1;
+    border: none;
+    background: #f7f1f1;
+    padding: 0 1.5em;
+    font-size: initial;
+  }
+  
+  .NewList button {
+    padding: 0 1.3rem;
+    border: none;
+    background: #ff6666;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-left: 5px;
+    cursor: pointer;
+    transform: background 0.2s ease-out;
+  }
+  
+  .NewList button:hover {
+    background: #ff5e5e;
+  }
+  
+  .NewList input,
+  .NewList button {
+    font-family: "Quicksand", sans-serif;
+    height: 3rem;
+  }
