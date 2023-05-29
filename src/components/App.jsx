@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import TodoList from './Todolist';
 
 function App() {
   return (
-    <div className="App">
-      <h1>React to do list</h1>
+    <div>
+      <TodoList />
     </div>
   )
 }
